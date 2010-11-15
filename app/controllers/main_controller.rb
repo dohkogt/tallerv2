@@ -4,12 +4,15 @@ require 'open-uri'
 
 class MainController < ApplicationController
 
+# Get http://localhost:3000/descargo1/:orden_id/servi_id
   def descargo1
     i_orden = [:orden_id]
     i_serv  = [:servi_id]
     url_desc1 = "http://192.168.2.102:5050/bodega/solicitud_orden.php?idorden=#{i_repuesto}&idservicio=#{i_serv}"
         puts url_dec1
   end
+
+# Get http://localhost:3000/solicitudordenrepuestos/:orden_id/:servi_id  
   
   def solicitudordenrepuestos
     i_orden = [:orden_id]
@@ -19,10 +22,6 @@ class MainController < ApplicationController
     @detalle.each do |odetalle|
       idodetalle = odetalle.id
       @repuesto = Serviciorepuesto.find_all_by_orden_detalle_id(idodetalle)
-    # @odetalles = Ordendetalle.find_all_by_orden_id(i_orden)
-    # @odetalles.each do |sor_servicio|
-    #  iddetalle = sor_servicio.id
-    #  @repuesto = Serviciorepuesto.find_all_by_orden_detalle_id(iddetalle)
     end
 
     respond_to do |format|
@@ -30,7 +29,7 @@ class MainController < ApplicationController
     end
   end
   
-
+# Get http://localhost:3000/devolucionvehiculo/:orden_id
   def devolucion_vehiculo
     i_orden = params[:orden_id]
     @orden = Orden.find_by_id(i_orden)
@@ -53,12 +52,6 @@ class MainController < ApplicationController
     i_orden = params[:order_id]
     i_orden = i_orden.to_i
     @orden = Orden.find(i_orden)
-    #if (@orden =Orden.find(i_orden))
-    #  if @order.empy?
-    #      @error_code = 500
-    #      @error_description = "Error al agregar servicio. #{@ordendetalle.errors}"
-    #   end
-    #end
         
     respond_to do |format|
         format.xml
@@ -66,6 +59,7 @@ class MainController < ApplicationController
         
   end
 
+# Get http://consultarrepuestos/:descripcion
   def consultar_repuestos
     i_repuesto = params[:descripcion]
     url_repuesto = "http://192.168.2.102:5050/bodega/catalogo_producto.php?descripcion=#{i_repuesto}"
@@ -76,17 +70,9 @@ class MainController < ApplicationController
     if repuestos.at_css('error').nil?
       for repuesto in repuestos
         @repuesto = objeto.new(:id => repuesto.at_css('codigo').text)
-      end
+      end        
       
-      # @repuestoid = repuesto.at_css('codigo').text
-      # @repuestonombre = repuesto.at_css('descripcion').text
-      # @repuestoid = repuesto.at_css('codigo').text
-      # @repuestonombre = repuesto.at_css('descripcion').text
-      
-      
-    end
-    
-    
+    end    
 
     respond_to do |format|
        format.xml
@@ -239,6 +225,5 @@ class MainController < ApplicationController
       format.xml
     end
   end
-
 
 end

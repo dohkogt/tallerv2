@@ -13,7 +13,7 @@ Taller::Application.routes.draw do
   match 'consultarestado/:order_id(.:format)' => 'main#consultar_estado'
   match 'consultarrepuestos/:descripcion(.format)' => 'main#consultar_repuestos'
   match 'devolucionvehiculo/:orden_id(.format)' => 'main#devolucion_vehiculo'
-  match 'descargo1/:orden_id/servi_id(.format)' => 'main#descargo1'
+  match 'descargo1/:orden_id/:servi_id(.format)' => 'main#descargo1'
   match 'solicitudordenrepuestos/:orden_id/:servi_id(.format)' => 'main#solicitudordenrepuestos'
   resources :serviciorepuestos
 
