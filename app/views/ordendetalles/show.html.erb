@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Orden:</b>
+  <%= @ordendetalle.orden_id %>
+</p>
+
+<p>
+  <b>Servicio:</b>
+  <%= @ordendetalle.servicio_id %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @ordendetalle.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_ordendetalle_path(@ordendetalle) %> |
+<%= link_to 'Back', ordendetalles_path %>

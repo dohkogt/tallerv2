@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cita:</b>
+  <%= @orden.cita_id %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @orden.estado_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_orden_path(@orden) %> |
+<%= link_to 'Back', ordenes_path %>

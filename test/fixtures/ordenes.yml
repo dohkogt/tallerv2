@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cita_id: 1
+  estado_id: 1
+
+two:
+  cita_id: 1
+  estado_id: 1

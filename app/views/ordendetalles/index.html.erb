@@ -1,0 +1,27 @@
+<h1>Listing ordendetalles</h1>
+
+<table>
+  <tr>
+    <th>Orden</th>
+    <th>Servicio</th>
+    <th>Descripcion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ordendetalles.each do |ordendetalle| %>
+  <tr>
+    <td><%= ordendetalle.orden_id %></td>
+    <td><%= ordendetalle.servicio_id %></td>
+    <td><%= ordendetalle.descripcion %></td>
+    <td><%= link_to 'Show', ordendetalle %></td>
+    <td><%= link_to 'Edit', edit_ordendetalle_path(ordendetalle) %></td>
+    <td><%= link_to 'Destroy', ordendetalle, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ordendetalle', new_ordendetalle_path %>

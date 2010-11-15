@@ -1,0 +1,29 @@
+<h1>Listing citas</h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Cliente</th>
+    <th>Estados</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @citas.each do |cita| %>
+  <tr>
+    <td><%= cita.fecha %></td>
+    <td><%= cita.hora %></td>
+    <td><%= cita.cliente_id %></td>
+    <td><%= cita.estados_id %></td>
+    <td><%= link_to 'Show', cita %></td>
+    <td><%= link_to 'Edit', edit_cita_path(cita) %></td>
+    <td><%= link_to 'Destroy', cita, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cita', new_cita_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  orden_id: 1
+  servicio_id: 1
+  descripcion: MyText
+
+two:
+  orden_id: 1
+  servicio_id: 1
+  descripcion: MyText

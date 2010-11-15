@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Orden detalle:</b>
+  <%= @serviciorepuesto.orden_detalle_id %>
+</p>
+
+<p>
+  <b>Repuesto:</b>
+  <%= @serviciorepuesto.repuesto_id %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @serviciorepuesto.cantidad %>
+</p>
+
+<p>
+  <b>Costo:</b>
+  <%= @serviciorepuesto.costo %>
+</p>
+
+
+<%= link_to 'Edit', edit_serviciorepuesto_path(@serviciorepuesto) %> |
+<%= link_to 'Back', serviciorepuestos_path %>

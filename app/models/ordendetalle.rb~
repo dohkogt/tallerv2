@@ -1,0 +1,2 @@
+class Ordendetalle < ActiveRecord::Base
+end

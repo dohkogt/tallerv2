@@ -1,0 +1,29 @@
+<h1>Listing serviciorepuestos</h1>
+
+<table>
+  <tr>
+    <th>Orden detalle</th>
+    <th>Repuesto</th>
+    <th>Cantidad</th>
+    <th>Costo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @serviciorepuestos.each do |serviciorepuesto| %>
+  <tr>
+    <td><%= serviciorepuesto.orden_detalle_id %></td>
+    <td><%= serviciorepuesto.repuesto_id %></td>
+    <td><%= serviciorepuesto.cantidad %></td>
+    <td><%= serviciorepuesto.costo %></td>
+    <td><%= link_to 'Show', serviciorepuesto %></td>
+    <td><%= link_to 'Edit', edit_serviciorepuesto_path(serviciorepuesto) %></td>
+    <td><%= link_to 'Destroy', serviciorepuesto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Serviciorepuesto', new_serviciorepuesto_path %>

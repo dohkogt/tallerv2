@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha: 2010-11-11
+  hora: 1
+  cliente_id: 1
+  estados_id: 1
+
+two:
+  fecha: 2010-11-11
+  hora: 1
+  cliente_id: 1
+  estados_id: 1

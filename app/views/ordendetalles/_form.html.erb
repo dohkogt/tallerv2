@@ -1,0 +1,29 @@
+<%= form_for(@ordendetalle) do |f| %>
+  <% if @ordendetalle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ordendetalle.errors.count, "error") %> prohibited this ordendetalle from being saved:</h2>
+
+      <ul>
+      <% @ordendetalle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orden_id %><br />
+    <%= f.text_field :orden_id %>
+  </div>
+  <div class="field">
+    <%= f.label :servicio_id %><br />
+    <%= f.text_field :servicio_id %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
