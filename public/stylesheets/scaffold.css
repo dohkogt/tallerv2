@@ -4,6 +4,7 @@ body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
+  background-color: #EEE;
 }
 
 pre {
@@ -54,3 +55,27 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+
+html { background-color: #D7D7D0; }
+	body { font-family: Verdana, Helvetica, Arial, sans-serif; margin: 32px auto; padding: 32px;min-width: 800px; max-width: 1000px; font-size: 0.8em; background-color: #EEE; color: #333; -moz-border-radius: 16px; -webkit-border-radius: 16px; border-radius: 16px; 
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0,33);  
+	-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0,33);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0,33);
+	}
+	
+	h1 { margin: 0 0 24px; }
+	h1 span { visibility: hidden; }
+h1 img { margin: 0; display: inline; }
+	h2 { margin-top: 32px; }
+	h2 a { font-size: 0.8em; }
+	img { border: 0 none; display: block; margin: 0 auto; }
+	p { font-family: Verdana, Helvetica, Arial, sans-serif; line-height: 3ex; }
+	a { color: #900; }
+	code, pre { font: bold 1.1em "Menlo", "Monaco", "BitStream Vera Sans Mono", "Consolas", "Courier New"; }
+	ol, ul { list-style-type: none; margin-left: 0; padding-left: 0; }
+	fieldset { margin: 0; padding: 0; border: none 0; }
+	
+	div.main { margin-right: 164px; }
+	div.sideBar { width: 150px; margin-top: 8px; float: right;  }
+	
