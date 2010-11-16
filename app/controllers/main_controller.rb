@@ -243,17 +243,17 @@ class MainController < ApplicationController
     d_fecha = Date.parse(params[:fecha])
 
     unless params[:hora].nil?      
-      i_hora = params[:hora].to_s
-      # i_hora = params[:hora].to_i
+      #i_hora = params[:hora].to_s
+      i_hora = params[:hora].to_i
       citas = Cita.where("fecha = ? and hora = ?", d_fecha, i_hora)
       # citas = Cita.where("fecha = ? and hora = ?", d_fecha, i_hora).count
       # 1 : ocupado
       # 0 : libre
-      @disponible = citas > 0 ? 'false' : 'true'
+      @disponible = citas.size > 0 ? 'false' : 'true'
     else
       citas = Cita.select('hora').where("fecha = ?", d_fecha)
 
-      @horaslibres = ["0800","0830", "0900","0930", "1000", "1030", "1100", "1130", "1200", "1230", "1300","1330", "1400", "1430", "1500","1530", "1600","1630"]
+      @horaslibres = [800, 830, 900, 930, 1000, 1030, 1100, 1130, 1200, 1230, 1300,1330, 1400, 1430, 1500,1530, 1600, 1630]
       for cita in citas
         @horaslibres.delete(cita.hora)
       end
