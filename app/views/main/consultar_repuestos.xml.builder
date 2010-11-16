@@ -5,9 +5,9 @@ unless @error_code.nil?
   end
 else
   xml.consultar_repuestos do
-   @repuesto.each do  
-    xml.repuesto_id @repuesto.id
+   @repuestos.each do |repuesto|
+    xml.repuesto_id repuesto[:codigo]
+    xml.nombre	    repuesto[:descrip]
     end
-
-  end
+    end  
 end
