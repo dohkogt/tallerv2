@@ -26,12 +26,12 @@ class MainController < ApplicationController
       
       url_repuesto = "http://localhost:3001/consultarrepuestos/#{nombre}.xml"
 
-     repuestos_doc = Nokogiri::XML(open(url_repuesto))  
-     repuestos_nodos = repuestos_doc.css("repuesto")
+      repuestos_doc = Nokogiri::XML(open(url_repuesto))  
+      repuestos_nodos = repuestos_doc.css("repuesto")
 
       @repuestos = []
       repuestos_nodos.each do |repuesto|
-          @repuestos <<  {:repuesto_id => repuesto.css('repuesto_id').text, :nombre => repuesto.css('nombre').text}
+        @repuestos <<  {:repuesto_id => repuesto.css('repuesto_id').text, :nombre => repuesto.css('nombre').text}
       end
     elsif params[:repuesto_id]
       @ordendetalle.serviciorepuestos << Serviciorepuesto.new(:repuesto_id => params[:repuesto_id],
@@ -56,7 +56,7 @@ class MainController < ApplicationController
     i_orden = [:orden_id]
     i_serv  = [:servi_id]
     url_desc1 = "http://192.168.2.102:5050/bodega/solicitud_orden.php?idorden=#{i_repuesto}&idservicio=#{i_serv}"
-        puts url_dec1
+    puts url_dec1
   end
   
   def solicitudordenrepuestos
@@ -74,21 +74,15 @@ class MainController < ApplicationController
 
   def devolucion_vehiculo
     i_orden = params[:orden_id]
-     @orden = Orden.find_by_id(i_orden)
-     id_orden = @orden.id.to_i
+    @orden = Orden.find(i_orden)
+    @detalles = @orden.ordendetalles
     
-    @odetalles = Ordendetalle.find_all_by_orden_id(id_orden)
-     @odetalles.each do |odetalles|
-      iddetalle = odetalles.id
-      @repdesc = Serviciorepuesto.find_all_by_orden_detalle_id(odetalles)
-     end
-      
     respond_to do |format|
-         format.xml
+      format.xml
     end
- end
+  end
   
-# GET http://localhost:3000/consultarestado/:orden_id'
+  # GET http://localhost:3000/consultarestado/:orden_id'
   def consultar_estado
     i_orden = params[:order_id]
     i_orden = i_orden.to_i
@@ -99,11 +93,11 @@ class MainController < ApplicationController
     #      @error_description = "Error al agregar servicio. #{@ordendetalle.errors}"
     #   end
     #end
-        
+    
     respond_to do |format|
-        format.xml
+      format.xml
     end
-        
+    
   end
 
   def consultar_repuestos
@@ -114,19 +108,19 @@ class MainController < ApplicationController
     repuestos_doc = Nokogiri::XML(open(url_repuesto))
     
     repuestos_nodos = repuestos_doc.css("producto")
-     @repuestos = []   
+    @repuestos = []   
     repuestos_nodos.each do |repuesto|
       @repuestos <<  {:codigo => repuesto.css('codigo').text, :descrip => repuesto.css('descripcion').text}
     end
-     
+    
     respond_to do |format|
-       format.xml
+      format.xml
     end
-          
+    
   end
   
-    
- 
+  
+  
   # GET http://localhost:3000/agregarservicio/123/456.xml
   def create_servicio
     i_orden_id = params[:orden_id]
@@ -142,7 +136,7 @@ class MainController < ApplicationController
 
       if servicio.at_css('error').nil?
         nombre = servicio.at_css('nombre').text
-       
+        
         @ordendetalle = Ordendetalle.new(:orden_id => @orden.id,
                                          :servicio_id => i_servicio_id,
                                          :descripcion => nombre)
