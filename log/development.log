@@ -1,0 +1,48 @@
+
+
+Started GET "/consultar_repuestos/llanta" for 127.0.0.1 at Mon Nov 15 19:48:45 -0600 2010
+
+ActionController::RoutingError (No route matches "/consultar_repuestos/llanta"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/consultarrepuestos/llanta" for 127.0.0.1 at Mon Nov 15 19:49:01 -0600 2010
+  Processing by MainController#consultar_repuestos as HTML
+  Parameters: {"descripcion"=>"llanta"}
+Completed   in 54ms
+
+NoMethodError (undefined method `text' for nil:NilClass):
+  app/controllers/main_controller.rb:74:in `consultar_repuestos'
+  app/controllers/main_controller.rb:73:in `consultar_repuestos'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)
+
+
+Started GET "/consultarrepuestos/llanta" for 127.0.0.1 at Mon Nov 15 19:56:23 -0600 2010
+  Processing by MainController#consultar_repuestos as HTML
+  Parameters: {"descripcion"=>"llanta"}
+Completed   in 19ms
+
+NoMethodError (undefined method `text' for nil:NilClass):
+  app/controllers/main_controller.rb:76:in `consultar_repuestos'
+  app/controllers/main_controller.rb:75:in `consultar_repuestos'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started GET "/consultarrepuestos/llanta" for 127.0.0.1 at Mon Nov 15 19:57:44 -0600 2010
+  Processing by MainController#consultar_repuestos as HTML
+  Parameters: {"descripcion"=>"llanta"}
+Completed 406 Not Acceptable in 89ms
+
+
+Started GET "/consultarrepuestos/llanta" for 127.0.0.1 at Mon Nov 15 19:59:52 -0600 2010
+  Processing by MainController#consultar_repuestos as HTML
+  Parameters: {"descripcion"=>"llanta"}
+Completed 406 Not Acceptable in 19ms

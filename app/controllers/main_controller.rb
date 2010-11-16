@@ -62,27 +62,18 @@ class MainController < ApplicationController
 # Get http://consultarrepuestos/:descripcion
   def consultar_repuestos
     i_repuesto = params[:descripcion]
-#    url_repuesto = "http://192.168.2.102:5050/bodega/catalogo_producto.php?descripcion=#{i_repuesto}"
-    url_repuesto = "http://localhost:3001/images/repuestos.xml"
+
+    url_repuesto = "http://localhost:3000/consultar_repuestos.xml"
     puts url_repuesto
-    repuestos = Nokogiri::XML(open(url_repuesto))
-# nombre = servicio.at_css('nombre').text
-  #  repuestos.css("codigo").each do |item|
+    repuestos_doc = Nokogiri::XML(open(url_repuesto))
 
-       repuestos.css("codigo").text.each do 
-       @nombre =[repuestos.at_css("descripcion").text]
-       end
-       @nombre = nombre
-       # @nombre = [1,2,3,4,5]
-       # @codigos = item.at_css('codigo').text
-     
 
-   # if nombre.at_css('error').nil? and codigos.atss('error').nil?
-   #   for repuesto in repuestos
-   #     @repuesto = objeto.new(:id => repuesto.at_css('codigo').text)
-   #   end        
-     
-    #end    
+    repuestos_nodos = repuestos_doc.css("producto")
+    
+    repuestos_nodos.each do |repuesto|
+      puts repuesto.css('codigo').text
+      puts repuesto.css('descripcion').text
+    end
 
     respond_to do |format|
        format.xml
