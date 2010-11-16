@@ -1,0 +1,33 @@
+<%= form_for(@serviciorepuesto) do |f| %>
+  <% if @serviciorepuesto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@serviciorepuesto.errors.count, "error") %> prohibited this serviciorepuesto from being saved:</h2>
+
+      <ul>
+      <% @serviciorepuesto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orden_detalle_id %><br />
+    <%= f.text_field :orden_detalle_id %>
+  </div>
+  <div class="field">
+    <%= f.label :repuesto_id %><br />
+    <%= f.text_field :repuesto_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.text_field :cantidad %>
+  </div>
+  <div class="field">
+    <%= f.label :costo %><br />
+    <%= f.text_field :costo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @cita.fecha %>
+</p>
+
+<p>
+  <b>Hora:</b>
+  <%= @cita.hora %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @cita.cliente_id %>
+</p>
+
+<p>
+  <b>Estados:</b>
+  <%= @cita.estados_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_cita_path(@cita) %> |
+<%= link_to 'Back', citas_path %>

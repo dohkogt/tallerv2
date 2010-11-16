@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  orden_detalle_id: 1
+  repuesto_id: 1
+  cantidad: 1
+  costo: 9.99
+
+two:
+  orden_detalle_id: 1
+  repuesto_id: 1
+  cantidad: 1
+  costo: 9.99
