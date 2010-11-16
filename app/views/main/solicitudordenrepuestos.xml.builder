@@ -1,10 +1,13 @@
 xml.instruct!
 unless @error_code.nil?
   xml.consultar_servicio do
-    xml.ordenprueba 0
+    xml.ordenprueba false
   end
 else
   xml.repuestos do
-    xml.repuesto_id @repuesto.repuesto_id
-end       
+    @repder.each do |rep|
+    xml.orden_id rep.id
+    end
+end
+  
     end

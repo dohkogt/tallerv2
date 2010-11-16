@@ -14,17 +14,10 @@ class MainController < ApplicationController
   def solicitudordenrepuestos
     i_orden = [:orden_id]
     i_serv = params[:servi_id]
-    @ordendetalle = Ordendetalle.find_all_by_orden_id(i_orden)
-    @detalle = @ordetalle
-    @detalle.each do |odetalle|
-      idodetalle = odetalle.id
-      @repuesto = Serviciorepuesto.find_all_by_orden_detalle_id(idodetalle)
-    # @odetalles = Ordendetalle.find_all_by_orden_id(i_orden)
-    # @odetalles.each do |sor_servicio|
-    #  iddetalle = sor_servicio.id
-    #  @repuesto = Serviciorepuesto.find_all_by_orden_detalle_id(iddetalle)
-    end
-
+    # @ordendetalle = Ordendetalle.find_by_orden_id(i_orden)
+    # @detalle = @ordetalle
+    ordend = Ordendetalle.select('id').where("orden_id = ? and servicio_id = ?", i_orden, i_serv)
+    @repdet = Serviciorepuesto.find_all_by_orden_detalle_id(ordend)
     respond_to do |format|
       format.xml
     end
@@ -35,13 +28,12 @@ class MainController < ApplicationController
     i_orden = params[:orden_id]
      @orden = Orden.find_by_id(i_orden)
      id_orden = @orden.id.to_i
-    # @odetalles = Ordendetalle.select('servicio_id').where("orden_id = ?", i_orden)
     
     @odetalles = Ordendetalle.find_all_by_orden_id(id_orden)
-    @odetalles.each do |ordetalle|
-      iddetalle = ordetalle.id
-      @repdesc = Serviciorepuesto.find_all_by_orden_detalle_id(iddetalle)
-    end
+     @odetalles.each do |odetalles|
+      iddetalle = odetalles.id
+      @repdesc = Serviciorepuesto.find_all_by_orden_detalle_id(odetalles)
+     end
       
     respond_to do |format|
          format.xml
