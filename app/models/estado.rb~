@@ -1,4 +1,0 @@
-class Estado < ActiveRecord::Base
-  belongs_to :cita
-  validates :nombre, :presence => true
-end
