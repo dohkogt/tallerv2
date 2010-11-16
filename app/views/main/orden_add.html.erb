@@ -1,4 +1,50 @@
 <h1>Mofificando Orden #<%= @orden.id %></h1>
 <h2>Vehiculo:</h2>
 <%= @orden.cita.vehiculo.placa %>
-<h2>Servicios #<%= @ordendetalle.descripcion %></h>2
+<h2>Servicio prestado </h2>
+<p><%= @ordendetalle.descripcion %></p>
+<h2>Respuestos</h2>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <th>Nombre</th>
+    <th>Cantidad</th>
+    <th>Costo</th>
+    <th>Accion</th>
+  </tr>
+  <% for repuesto in @ordendetalle.serviciorepuestos %>
+    <tr>
+      <td><%= repuesto.nombre %></td>
+      <td><%= repuesto.cantidad %></td>
+      <td><%= repuesto.costo %></td>
+      <td><%= link_to 'Remover', removerrepuesto_path(@orden.id, @ordendetalle.id, repuesto.id) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Agregar Repuesto</h2>
+<p>Ingrese descripcion para buscar repuesto</p>
+<% form_tag agregarrepuesto_path(@orden.id,@ordendetalle.id) do %>
+  <%= label_tag 'Nombre repuesto:' %>
+  <%= text_field_tag 'nombre_repuesto', '', :size => 60 %>
+  <%= submit_tag 'Buscar Repuesto' %>
+<% end %>
+
+<% if @repuestos %>
+  <hr />
+  <h2>Repuestos Encontrados</h2>
+  <table width="100%" cellspacing="0" cellpadding="0" border="1">
+    <tr>
+      <th>Codigo</th>
+      <th>Nombre</th>
+      <th>Accion</th>
+    </tr>
+    <% for repuesto in @repuestos %>
+      <tr>
+        <td><%= repuesto[:repuesto_id] %></td>
+        <td><%= repuesto[:nombre] %></td>
+        <td><%= link_to "Agregar a Servicio", agregarrepuesto_path(@orden.id,@ordendetalle.id,repuesto[:repuesto_id], repuesto[:nombre].tr(' ','+')) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>

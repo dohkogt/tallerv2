@@ -11,7 +11,9 @@ Taller::Application.routes.draw do
 
   match 'servicio_nombre/:servicio_id(.:format)' => 'testdata#servicio_nombre'
   match 'consultarestado/:order_id(.:format)' => 'main#consultar_estado'
+  
   match 'consultarrepuestos/:descripcion(.format)' => 'main#consultar_repuestos'
+  
   match 'devolucionvehiculo/:orden_id(.format)' => 'main#devolucion_vehiculo'
   match 'descargo1/:orden_id/servi_id(.format)' => 'main#descargo1'
   match 'solicitudordenrepuestos/:orden_id/:servi_id(.format)' => 'main#solicitudordenrepuestos'
@@ -19,7 +21,8 @@ Taller::Application.routes.draw do
 
   match 'actualizarorden' => 'main#actualizar_orden'
   match 'modificarorden/:orden_id' => 'main#orden_edit', :as => 'modificarorden'
-  match 'agregarrepuesto/:orden_id/:orden_detalle_id' => 'main#orden_add', :as => 'agregarrepuesto'
+  match 'agregarrepuesto/:orden_id/:orden_detalle_id(/:repuesto_id/:nombre)' => 'main#orden_add', :as => 'agregarrepuesto'
+  match 'removerrepuesto/:orden_id/:orden_detalle_id/:repuesto_id' => 'main#orden_destroy', :as => 'removerrepuesto'
 
   resources :serviciorepuestos
 

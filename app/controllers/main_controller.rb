@@ -20,7 +20,35 @@ class MainController < ApplicationController
   def orden_add
     @orden = Orden.find( params[:orden_id] )
     @ordendetalle = Ordendetalle.find(params[:orden_detalle_id])
-  
+
+    if params[:nombre_repuesto]
+      nombre = params[:nombre_repuesto].tr(' ','+')
+      
+      url_repuesto = "http://localhost:3001/consultarrepuestos/#{nombre}.xml"
+
+     repuestos_doc = Nokogiri::XML(open(url_repuesto))  
+     repuestos_nodos = repuestos_doc.css("repuesto")
+
+      @repuestos = []
+      repuestos_nodos.each do |repuesto|
+          @repuestos <<  {:repuesto_id => repuesto.css('repuesto_id').text, :nombre => repuesto.css('nombre').text}
+      end
+    elsif params[:repuesto_id]
+      @ordendetalle.serviciorepuestos << Serviciorepuesto.new(:repuesto_id => params[:repuesto_id],
+                                                              :cantidad => 1,
+                                                              :costo => 1,
+                                                              :nombre => params[:nombre].tr('+',' '))
+      
+    end    
+  end
+
+  def orden_destroy
+    @orden = Orden.find( params[:orden_id] )
+    @ordendetalle = Ordendetalle.find(params[:orden_detalle_id])
+
+    Serviciorepuesto.find(params[:repuesto_id]).destroy
+
+    redirect_to agregarrepuesto_path(@orden.id, @ordendetalle.id)
   end
   
   

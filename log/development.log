@@ -660,3 +660,799 @@ Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:57:09 -0600 2010
   [1m[35mServiciorepuesto Load (0.5ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
 Rendered main/orden_edit.html.erb within layouts/application (216.9ms)
 Completed 200 OK in 268ms (Views: 223.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:34:54 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.5ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+Rendered main/orden_add.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 270ms (Views: 80.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:35:27 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+Rendered main/orden_add.html.erb within layouts/application (62.1ms)
+Completed 200 OK in 105ms (Views: 67.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:37:42 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305103998160_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 109ms (Views: 71.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:38:49 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305103978820_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (163.4ms)
+Completed 200 OK in 204ms (Views: 168.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:38:52 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305103434340_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (198.1ms)
+Completed 200 OK in 254ms (Views: 204.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/consultarrepuestos/llanta" for 127.0.0.1 at Tue Nov 16 14:44:40 -0600 2010
+  Processing by MainController#consultar_repuestos as HTML
+  Parameters: {"descripcion"=>"llanta"}
+Completed 406 Not Acceptable in 36ms
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:44:46 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (39.5ms)
+Completed 200 OK in 70ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:47:33 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (6.2ms)
+Completed 200 OK in 39ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:52:47 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+Completed   in 175ms
+
+NameError (undefined local variable or method `url_repuesto' for #<MainController:0x7fe25d5c1128>):
+  app/controllers/main_controller.rb:27:in `orden_add'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.5ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:53:17 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+Completed   in 60050ms
+
+Timeout::Error (execution expired):
+  app/controllers/main_controller.rb:27:in `orden_add'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (211.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (238.9ms)
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:54:17 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.7ms)
+Completed 200 OK in 31ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:54:17 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:54:18 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (138.0ms)
+Completed 200 OK in 157ms (Views: 143.7ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102802720_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (184.5ms)
+Completed 200 OK in 1614ms (Views: 191.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:54:19 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:54:19 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (3.8ms)
+Completed 200 OK in 22ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102892420_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (186.1ms)
+Completed 200 OK in 308ms (Views: 194.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:54:52 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:54:52 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.6ms)
+Completed 200 OK in 28ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.5ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305105400920_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (81.2ms)
+Completed 200 OK in 334ms (Views: 89.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:56:36 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:56:36 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (5.2ms)
+Completed 200 OK in 161ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305105545260_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (70.8ms)
+Completed 200 OK in 452ms (Views: 84.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:57:08 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:57:08 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.2ms)
+Completed 200 OK in 24ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102559600_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (193.7ms)
+Completed 200 OK in 312ms (Views: 200.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:57:13 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"ring", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/ring.xml" for 127.0.0.1 at Tue Nov 16 14:57:13 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"ring"}
+Rendered main/consultar_repuestos.xml.builder (5.2ms)
+Completed 200 OK in 26ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102739400_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (221.9ms)
+Completed 200 OK in 372ms (Views: 229.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:57:17 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 14:57:17 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (5.6ms)
+Completed 200 OK in 159ms (Views: 145.9ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (1.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102852840_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (209.8ms)
+Completed 200 OK in 463ms (Views: 214.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 14:57:33 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"ring 16", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+Completed   in 38ms
+
+URI::InvalidURIError (bad URI(is not URI?): http://localhost:3001/consultarrepuestos/ring 16.xml):
+  app/controllers/main_controller.rb:27:in `orden_add'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.1ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:00:26 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"16", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/16.xml" for 127.0.0.1 at Tue Nov 16 15:00:26 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"16"}
+Rendered main/consultar_repuestos.xml.builder (7.3ms)
+Completed 200 OK in 28ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305104632660_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 225ms (Views: 86.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:00:56 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.5ms)
+Completed 200 OK in 224ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/consultarrepuestos/16.xml" for 127.0.0.1 at Tue Nov 16 15:01:01 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"16"}
+Rendered main/consultar_repuestos.xml.builder (4.1ms)
+Completed 200 OK in 28ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:02:00 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (3.9ms)
+Completed 200 OK in 30ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:02:01 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.6ms)
+Completed 200 OK in 152ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:02:09 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.3ms)
+Completed 200 OK in 29ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:03:29 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.2ms)
+Completed 200 OK in 30ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:03:36 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:03:37 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (16.9ms)
+Completed 200 OK in 50ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305104724740_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (144.2ms)
+Completed 200 OK in 453ms (Views: 156.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:09:15 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:09:16 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.8ms)
+Completed 200 OK in 25ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102698380_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (169.4ms)
+Completed 200 OK in 618ms (Views: 175.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:10:43 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:10:43 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.2ms)
+Completed 200 OK in 21ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+ERROR: compiling _app_views_main_orden_add_html_erb___1094618373_70305103309580_0 RAISED compile error
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:29: syntax error, unexpected kEND, expecting ')'
+');   end 
+         ^
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:32: syntax error, unexpected kEND, expecting ')'
+'); end 
+       ^
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:34: syntax error, unexpected kENSURE, expecting ')'
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:36: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_main_orden_add_html_erb___1094618373_70305103309580_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "main/orden_add";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Mofificando Orden #');@output_buffer.append= ( @orden.id );@output_buffer.safe_concat('</h1>
+<h2>Vehiculo:</h2>
+');@output_buffer.append= ( @orden.cita.vehiculo.placa );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('<h2>Servicio prestado </h2>
+<p>');@output_buffer.append= ( @ordendetalle.descripcion );@output_buffer.safe_concat('</p>
+<h2>Agregar Repuesto</h2>
+<p>Ingrese descripcion para buscar repuesto</p>
+');@output_buffer.append_if_string=  form_tag agregarrepuesto_path(@orden.id,@ordendetalle.id) do 
+@output_buffer.append= ( label_tag 'Nombre repuesto:' );@output_buffer.safe_concat('
+');@output_buffer.append= ( text_field_tag 'nombre_repuesto', '', :size => 60 );@output_buffer.safe_concat('
+');@output_buffer.append= ( submit_tag 'Buscar Repuesto' );@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+'); if @repuestos 
+@output_buffer.safe_concat('<hr />
+<h2>Repuestos Encontrados</h2>
+<table width="100%" cellspacing="0" cellpadding="0" border="1">
+  <tr>
+    <th>Codigo</th>
+    <th>Nombre</th>
+    <th>Accion</th>
+  </tr>
+');   for repuesto in @repuestos 
+@output_buffer.safe_concat('    <tr>
+      <td>');@output_buffer.append= ( repuesto[:repuesto_id] );@output_buffer.safe_concat('</td>
+      <td>');@output_buffer.append= ( repuesto[:nombre] );@output_buffer.safe_concat('</td>
+      <td>');@output_buffer.append= ( link_to "Agregar a Servicio", agregarrepuesto_path(@orden.id,@ordendetalle.id,repuesto[:repuesto_id],repuesto[:nombre].tr(' ','+') );@output_buffer.safe_concat('</td>
+    </tr>
+');   end 
+@output_buffer.safe_concat('</table>
+
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:36:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.1/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:435:in `_run__1683250185__process_action__866313867__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:119:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal.rb:133:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_controller/metal.rb:173:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.1/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered main/orden_add.html.erb within layouts/application (7.8ms)
+Completed   in 132ms
+
+ActionView::Template::Error (compile error
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:29: syntax error, unexpected kEND, expecting ')'
+');   end 
+         ^
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:32: syntax error, unexpected kEND, expecting ')'
+'); end 
+       ^
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:34: syntax error, unexpected kENSURE, expecting ')'
+/home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:36: syntax error, unexpected kEND, expecting ')'):
+    26:       <td><%= repuesto[:nombre] %></td>
+    27:       <td><%= link_to "Agregar a Servicio", agregarrepuesto_path(@orden.id,@ordendetalle.id,repuesto[:repuesto_id],repuesto[:nombre].tr(' ','+') %></td>
+    28:     </tr>
+    29:   <% end %>
+    30: </table>
+    31: 
+    32: <% end %>
+  app/views/main/orden_add.html.erb:36:in `compile'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.6ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:11:13 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305104511400_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (66.5ms)
+Completed 200 OK in 116ms (Views: 72.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:11:16 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:11:17 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (5.2ms)
+Completed 200 OK in 145ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305103898680_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (68.5ms)
+Completed 200 OK in 326ms (Views: 77.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/agregarrepuesto/1/1/13/Llanta+Radial+Ring+12" for 127.0.0.1 at Tue Nov 16 15:11:18 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"nombre"=>"Llanta+Radial+Ring+12", "repuesto_id"=>"13", "orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "serviciorepuestos" ("cantidad", "costo", "created_at", "nombre", "orden_detalle_id", "repuesto_id", "updated_at") VALUES (1, 1.0, '2010-11-16 21:11:19.081354', 'Llanta Radial Ring 12', 1, 13, '2010-11-16 21:11:19.081354')
+Redirected to http://localhost:3000/modificarorden/1
+Completed 302 Found in 277ms
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 15:11:19 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.3ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.4ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+Rendered main/orden_edit.html.erb within layouts/application (96.5ms)
+Completed 200 OK in 261ms (Views: 222.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:11:24 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102450740_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:8)
+Rendered main/orden_add.html.erb within layouts/application (202.1ms)
+Completed 200 OK in 242ms (Views: 207.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:12:22 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mServiciorepuesto Load (0.5ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102726680_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:24)
+Rendered main/orden_add.html.erb within layouts/application (203.0ms)
+Completed 200 OK in 243ms (Views: 207.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:16:41 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.3ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.3ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+Rendered main/orden_add.html.erb within layouts/application (230.0ms)
+Completed   in 274ms
+
+ActionView::Template::Error (undefined method `removerrepuesto_path' for #<#<Class:0x7fe25d68f550>:0x7fe25d68ccd8>):
+    16:       <td><%= repuesto.nombre %></td>
+    17:       <td><%= repuesto.cantidad %></td>
+    18:       <td><%= repuesto.costo %></td>
+    19:       <td><%= link_to 'Remover', removerrepuesto_path(@orden.id, @ordendetalle.id, repuesto.id) %></td>
+    20:     </tr>
+    21:   <% end %>
+    22: </table>
+  app/views/main/orden_add.html.erb:19:in `_app_views_main_orden_add_html_erb___1094618373_70305103238320_0'
+  app/views/main/orden_add.html.erb:14:in `_app_views_main_orden_add_html_erb___1094618373_70305103238320_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.8ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:17:02 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mServiciorepuesto Load (0.5ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+Rendered main/orden_add.html.erb within layouts/application (98.6ms)
+Completed   in 273ms
+
+ActionView::Template::Error (undefined method `removerrepuesto_path' for #<#<Class:0x7fe25d964168>:0x7fe25d960d88>):
+    16:       <td><%= repuesto.nombre %></td>
+    17:       <td><%= repuesto.cantidad %></td>
+    18:       <td><%= repuesto.costo %></td>
+    19:       <td><%= link_to 'Remover', removerrepuesto_path(@orden.id, @ordendetalle.id, repuesto.id) %></td>
+    20:     </tr>
+    21:   <% end %>
+    22: </table>
+  app/views/main/orden_add.html.erb:19:in `_app_views_main_orden_add_html_erb___1094618373_70305104717580_0'
+  app/views/main/orden_add.html.erb:14:in `_app_views_main_orden_add_html_erb___1094618373_70305104717580_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (124.8ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:17:27 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[36mOrden Load (0.3ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.3ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305101635640_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:26)
+Rendered main/orden_add.html.erb within layouts/application (232.0ms)
+Completed 200 OK in 273ms (Views: 237.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/removerrepuesto/1/1/3" for 127.0.0.1 at Tue Nov 16 15:17:31 -0600 2010
+  Processing by MainController#orden_destroy as HTML
+  Parameters: {"repuesto_id"=>"3", "orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mServiciorepuesto Load (0.4ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "serviciorepuestos" WHERE ("serviciorepuestos"."id" = 3)[0m
+Completed   in 354ms
+
+NoMethodError (undefined method `redirec_to' for #<MainController:0x7fe25d59ba90>):
+  app/controllers/main_controller.rb:51:in `orden_destroy'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.1ms)
+
+
+Started GET "/removerrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:17:52 -0600 2010
+
+ActionController::RoutingError (No route matches "/removerrepuesto/1/1"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:18:05 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.6ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mServiciorepuesto Load (0.5ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305103278980_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:26)
+Rendered main/orden_add.html.erb within layouts/application (95.3ms)
+Completed 200 OK in 269ms (Views: 230.9ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:18:09 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"commit"=>"Buscar Repuesto", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "orden_detalle_id"=>"1", "nombre_repuesto"=>"llanta", "orden_id"=>"1"}
+  [1m[36mOrden Load (0.3ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.4ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1
+
+
+Started GET "/consultarrepuestos/llanta.xml" for 127.0.0.1 at Tue Nov 16 15:18:09 -0600 2010
+  Processing by MainController#consultar_repuestos as XML
+  Parameters: {"descripcion"=>"llanta"}
+Rendered main/consultar_repuestos.xml.builder (4.7ms)
+Completed 200 OK in 141ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.4ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305105354180_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:26)
+Rendered main/orden_add.html.erb within layouts/application (111.6ms)
+Completed 200 OK in 570ms (Views: 119.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/agregarrepuesto/1/1/13/Llanta+Radial+Ring+12" for 127.0.0.1 at Tue Nov 16 15:18:12 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"nombre"=>"Llanta+Radial+Ring+12", "repuesto_id"=>"13", "orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (1.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "serviciorepuestos" ("cantidad", "costo", "created_at", "nombre", "orden_detalle_id", "repuesto_id", "updated_at") VALUES (1, 1.0, '2010-11-16 21:18:12.835801', 'Llanta Radial Ring 12', 1, 13, '2010-11-16 21:18:12.835801')
+  [1m[36mCita Load (0.5ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.4ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305104487660_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:26)
+Rendered main/orden_add.html.erb within layouts/application (87.4ms)
+Completed 200 OK in 511ms (Views: 94.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/removerrepuesto/1/1/4" for 127.0.0.1 at Tue Nov 16 15:18:15 -0600 2010
+  Processing by MainController#orden_destroy as HTML
+  Parameters: {"repuesto_id"=>"4", "orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.8ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mServiciorepuesto Load (0.4ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos"."id" = 4) LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mDELETE FROM "serviciorepuestos" WHERE ("serviciorepuestos"."id" = 4)[0m
+Redirected to http://localhost:3000/agregarrepuesto/1/1
+Completed 302 Found in 457ms
+
+
+Started GET "/agregarrepuesto/1/1" for 127.0.0.1 at Tue Nov 16 15:18:16 -0600 2010
+  Processing by MainController#orden_add as HTML
+  Parameters: {"orden_detalle_id"=>"1", "orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.3ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mServiciorepuesto Load (0.8ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_orden_add_html_erb___1094618373_70305102607060_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/orden_add.html.erb:26)
+Rendered main/orden_add.html.erb within layouts/application (226.0ms)
+Completed 200 OK in 268ms (Views: 230.9ms | ActiveRecord: 5.0ms)
