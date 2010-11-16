@@ -1,0 +1,662 @@
+
+
+Started GET "/actualizarorden" for 127.0.0.1 at Tue Nov 16 12:56:00 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70009301941400_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+Rendered main/actualizar_orden.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (156.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (102.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateVehiculos (20101111184459)
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "vehiculos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "placa" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101111184459')
+Migrating to CreateCitas (20101111184522)
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE TABLE "citas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "hora" integer, "cliente_id" integer, "estados_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101111184522')
+Migrating to CreateOrdenes (20101111184532)
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "ordenes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cita_id" integer, "estado_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101111184532')
+Migrating to CreateEstados (20101111184540)
+  [1m[36mSQL (2.9ms)[0m  [1mCREATE TABLE "estados" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101111184540')
+Migrating to CreateOrdendetalles (20101111184901)
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE TABLE "ordendetalles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "orden_id" integer, "servicio_id" integer, "descripcion" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101111184901')
+Migrating to CreateServiciorepuestos (20101111184917)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "serviciorepuestos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "orden_detalle_id" integer, "repuesto_id" integer, "cantidad" integer, "costo" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101111184917')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("citas")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("estados")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("ordendetalles")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("ordenes")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("serviciorepuestos")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("vehiculos")[0m
+
+
+Started GET "/nuevacita/122bwr/16-11-2010/15" for 127.0.0.1 at Tue Nov 16 12:59:55 -0600 2010
+  Processing by MainController#create_cita as HTML
+  Parameters: {"hora"=>"15", "placa"=>"122bwr", "fecha"=>"16-11-2010"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos"."id" FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "vehiculos" ("created_at", "placa", "updated_at") VALUES ('2010-11-16 18:59:56.478307', '122BWR', '2010-11-16 18:59:56.478307')
+  [1m[36mCita Load (10.0ms)[0m  [1mSELECT "citas"."id" FROM "citas" WHERE ("citas"."fecha" = '2010-11-16') AND ("citas"."hora" = 15) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "citas" ("cliente_id", "created_at", "estados_id", "fecha", "hora", "updated_at") VALUES (1, '2010-11-16 18:59:56.705679', 1, '2010-11-16', 15, '2010-11-16 18:59:56.705679')
+Completed 406 Not Acceptable in 648ms
+
+
+Started GET "/nuevacita/122bwr/16-11-2010/15.xml" for 127.0.0.1 at Tue Nov 16 13:00:08 -0600 2010
+  Processing by MainController#create_cita as XML
+  Parameters: {"hora"=>"15", "placa"=>"122bwr", "fecha"=>"16-11-2010"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas"."id" FROM "citas" WHERE ("citas"."fecha" = '2010-11-16') AND ("citas"."hora" = 15) LIMIT 1
+Rendered main/create_cita.xml.builder (198.0ms)
+Completed 200 OK in 346ms (Views: 213.5ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/recibirvehiculo/1.xml" for 127.0.0.1 at Tue Nov 16 13:01:00 -0600 2010
+  Processing by MainController#create_orden as XML
+  Parameters: {"cita_id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "citas" WHERE (id = '1')) AS subquery[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE (id = '1')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "ordenes" WHERE ("ordenes"."cita_id" = 1)) AS subquery[0m
+  [1m[35mOrden Load (0.2ms)[0m  SELECT "ordenes"."id" FROM "ordenes" WHERE ("ordenes"."cita_id" = 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ordenes" ("cita_id", "created_at", "estado_id", "updated_at") VALUES (1, '2010-11-16 19:01:00.811471', 1, '2010-11-16 19:01:00.811471')[0m
+Rendered main/create_orden.xml.builder (2.8ms)
+Completed 200 OK in 516ms (Views: 7.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:01:57 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204456012440_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+Rendered main/actualizar_orden.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/actualizar_orden" for 127.0.0.1 at Tue Nov 16 13:09:44 -0600 2010
+
+ActionController::RoutingError (No route matches "/actualizar_orden"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started POST "/actualizar_orden" for 127.0.0.1 at Tue Nov 16 13:10:21 -0600 2010
+
+ActionController::RoutingError (No route matches "/actualizar_orden"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.7ms)
+
+
+Started GET "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:10:28 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204457846320_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+Rendered main/actualizar_orden.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:11:14 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204457140880_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+Rendered main/actualizar_orden.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:11:20 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122brw"}
+Completed   in 205ms
+
+ArgumentError (Unknown key(s): trough):
+  app/models/vehiculo.rb:3
+  app/controllers/main_controller.rb:9:in `actualizar_orden'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.5ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:11:34 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122brw"}
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122brw') LIMIT 1
+Completed   in 68ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.first):
+  app/controllers/main_controller.rb:9:in `actualizar_orden'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:11:48 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122brw"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122brw') LIMIT 1[0m
+Completed   in 20ms
+
+NoMethodError (undefined method `ordenes' for nil:NilClass):
+  app/controllers/main_controller.rb:10:in `actualizar_orden'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.0ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:12:34 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122brw"}
+  [1m[35mVehiculo Load (0.4ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122brw') LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204457031720_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+Rendered main/actualizar_orden.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 34ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:12:40 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122bwr') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204456034760_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+Rendered main/actualizar_orden.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 31ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:13:05 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[35mVehiculo Load (0.4ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1
+Completed   in 28ms
+
+NoMethodError (undefined method `first' for #<Vehiculo:0x7fb37f8c25f0>):
+  app/controllers/main_controller.rb:10:in `actualizar_orden'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.8ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:13:15 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204456146600_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[35mOrden Load (0.5ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+Rendered main/actualizar_orden.html.erb within layouts/application (157.6ms)
+Completed   in 218ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))):
+    14:   <% unless @ordenes.nil? %>
+    15:     <h2>Ordenes para <%= @vehiculo.placa %></h2>
+    16:     
+    17:     <% if !@ordenes.blank? %>
+    18:       <table width="0" cellspacing="0" cellpadding="0" border="1">
+    19:         <tr>
+    20:           <th>Fecha Hora Ingreso</th>
+  app/views/main/actualizar_orden.html.erb:17:in `_app_views_main_actualizar_orden_html_erb___111874538_70204456146600_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  [1m[36mOrden Load (3.1ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))[0m
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.9ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:13:44 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+Completed   in 8ms
+
+ArgumentError (Unknown key(s): foreing_key):
+  app/models/vehiculo.rb:3
+  app/controllers/main_controller.rb:9:in `actualizar_orden'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:13:51 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204458102240_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[35mOrden Load (0.5ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+Rendered main/actualizar_orden.html.erb within layouts/application (28.1ms)
+Completed   in 207ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))):
+    14:   <% unless @ordenes.nil? %>
+    15:     <h2>Ordenes para <%= @vehiculo.placa %></h2>
+    16:     
+    17:     <% if !@ordenes.blank? %>
+    18:       <table width="0" cellspacing="0" cellpadding="0" border="1">
+    19:         <tr>
+    20:           <th>Fecha Hora Ingreso</th>
+  app/views/main/actualizar_orden.html.erb:17:in `_app_views_main_actualizar_orden_html_erb___111874538_70204458102240_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.4ms)
+  [1m[36mOrden Load (0.7ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))[0m
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.0ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:14:24 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204458419360_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[35mOrden Load (0.5ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+Rendered main/actualizar_orden.html.erb within layouts/application (28.4ms)
+Completed   in 192ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))):
+    14:   <% unless @ordenes.nil? %>
+    15:     <h2>Ordenes para <%= @vehiculo.placa %></h2>
+    16:     
+    17:     <% if !@ordenes.blank? %>
+    18:       <table width="0" cellspacing="0" cellpadding="0" border="1">
+    19:         <tr>
+    20:           <th>Fecha Hora Ingreso</th>
+  app/views/main/actualizar_orden.html.erb:17:in `_app_views_main_actualizar_orden_html_erb___111874538_70204458419360_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  [1m[36mOrden Load (0.7ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))[0m
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".vehiculo_id = 1))
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".vehiculo_id = 1))
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.7ms)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" LIMIT 1
+  [1m[36mCita Load (1.0ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas".vehiculo_id = 1)[0m
+SQLite3::SQLException: no such column: citas.vehiculo_id: SELECT     "citas".* FROM       "citas"  WHERE     ("citas".vehiculo_id = 1)
+  [1m[35mVehiculo Load (2.4ms)[0m  SELECT "vehiculos".* FROM "vehiculos" LIMIT 1
+  [1m[36mCita Load (1.1ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas".cliente_id = 1)[0m
+  [1m[35mOrden Load (0.8ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".cliente_id = 1))
+SQLite3::SQLException: no such column: citas.orden_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".cliente_id = 1))
+  [1m[36mOrden Load (0.8ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE (("citas".cliente_id = 1))[0m
+SQLite3::SQLException: no such column: citas.orden_id: SELECT     "ordenes".* FROM       "ordenes"  INNER JOIN "citas" ON "ordenes".id = "citas".orden_id WHERE     (("citas".cliente_id = 1))
+  [1m[35mVehiculo Load (1.6ms)[0m  SELECT "vehiculos".* FROM "vehiculos" LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas".cliente_id = 1)[0m
+  [1m[35mVehiculo Load (0.9ms)[0m  SELECT "vehiculos".* FROM "vehiculos" LIMIT 1
+  [1m[36mOrden Load (1.1ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".cita_id = "citas".id WHERE (("citas".cliente_id = 1))[0m
+  [1m[35mVehiculo Load (1.0ms)[0m  SELECT "vehiculos".* FROM "vehiculos" LIMIT 1
+  [1m[36mVehiculo Load (1.0ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" LIMIT 1[0m
+  [1m[35mCita Load (1.0ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas".cliente_id = 1) LIMIT 1
+  [1m[36mOrden Load (1.1ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes".cita_id = 1) LIMIT 1[0m
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:19:16 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204455932640_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".cita_id = "citas".id WHERE (("citas".cliente_id = 1))
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+Rendered main/actualizar_orden.html.erb within layouts/application (224.2ms)
+Completed 200 OK in 271ms (Views: 231.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:19:35 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[35mVehiculo Load (0.4ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204456332720_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".cita_id = "citas".id WHERE (("citas".cliente_id = 1))[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+Rendered main/actualizar_orden.html.erb within layouts/application (166.4ms)
+Completed 200 OK in 234ms (Views: 172.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:19:48 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204456245760_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[35mOrden Load (0.5ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".cita_id = "citas".id WHERE (("citas".cliente_id = 1))
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+Rendered main/actualizar_orden.html.erb within layouts/application (187.7ms)
+Completed 200 OK in 230ms (Views: 193.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:20:26 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"13"}
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '13') LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204456469380_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+Rendered main/actualizar_orden.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 48ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:20:30 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204457764240_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".cita_id = "citas".id WHERE (("citas".cliente_id = 1))
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+Rendered main/actualizar_orden.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 89ms (Views: 50.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:22:24 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204456632440_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".cita_id = "citas".id WHERE (("citas".cliente_id = 1))[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+Rendered main/actualizar_orden.html.erb within layouts/application (58.7ms)
+Completed   in 104ms
+
+ActionView::Template::Error (undefined method `modificarorden_path' for #<#<Class:0x7fb37f663a20>:0x7fb37f661b58>):
+    29:             <td><%= orden.cita.fecha %></td>
+    30:             <td><%= orden.cita.hora %></td>
+    31:             <td><%= orden.estado_id %></td>
+    32:             <td><%= link_to 'Elegir', modificarorden_path(orden.id), :title => 'Selecione orden para trabajar' %></td>
+    33:           </tr>
+    34:         <% end %>
+    35:         
+  app/views/main/actualizar_orden.html.erb:32:in `_app_views_main_actualizar_orden_html_erb___111874538_70204456632440_0'
+  app/views/main/actualizar_orden.html.erb:26:in `_app_views_main_actualizar_orden_html_erb___111874538_70204456632440_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (145.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (153.1ms)
+
+
+Started POST "/actualizarorden" for 127.0.0.1 at Tue Nov 16 13:23:45 -0600 2010
+  Processing by MainController#actualizar_orden as HTML
+  Parameters: {"commit"=>"Buscar Orden", "authenticity_token"=>"Ol820OOsRburfP8KztrblE1oRjUcUodM6JKA93U4e+c=", "utf8"=>"✓", "placa"=>"122bwr"}
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."placa" = '122BWR') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_main_actualizar_orden_html_erb___111874538_70204458546700_0 at /home/javier/Documents/Projects/tallerv2/app/views/main/actualizar_orden.html.erb:5)
+  [1m[35mOrden Load (0.5ms)[0m  SELECT "ordenes".* FROM "ordenes" INNER JOIN "citas" ON "ordenes".cita_id = "citas".id WHERE (("citas".cliente_id = 1))
+  [1m[36mCita Load (0.5ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+Rendered main/actualizar_orden.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 272ms (Views: 73.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:25:49 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+Completed   in 25ms
+
+ActionView::MissingTemplate (Missing template main/orden_edit with {:locale=>[:en, :en], :formats=>[:html], :handlers=>[:rhtml, :rxml, :rjs, :builder, :erb]} in view paths "/home/javier/Documents/Projects/tallerv2/app/views"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:26:02 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+Rendered main/orden_edit.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 98ms (Views: 73.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:27:10 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+Rendered main/orden_edit.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 83ms (Views: 62.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:31:25 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.7ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+Rendered main/orden_edit.html.erb within layouts/application (59.5ms)
+Completed 200 OK in 131ms (Views: 65.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:32:58 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+Rendered main/orden_edit.html.erb within layouts/application (58.5ms)
+Completed 200 OK in 114ms (Views: 67.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:41:17 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.3ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+Rendered main/orden_edit.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 100ms (Views: 59.9ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateVehiculos (20101111184459)
+Migrating to CreateCitas (20101111184522)
+Migrating to CreateOrdenes (20101111184532)
+Migrating to CreateEstados (20101111184540)
+Migrating to CreateOrdendetalles (20101111184901)
+Migrating to CreateServiciorepuestos (20101111184917)
+Migrating to AddFieldNombreToServiciorepuesto (20101116194157)
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1mALTER TABLE "serviciorepuestos" ADD "nombre" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101116194157')
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  PRAGMA index_list("citas")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("estados")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("ordendetalles")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("ordenes")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("serviciorepuestos")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("vehiculos")[0m
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:45:12 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+Rendered main/orden_edit.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 255ms (Views: 61.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:46:25 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+Rendered main/orden_edit.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 97ms (Views: 57.4ms | ActiveRecord: 1.0ms)
+  [1m[35mOrden Load (2.3ms)[0m  SELECT "ordenes".* FROM "ordenes" LIMIT 1
+  [1m[36mOrdendetalle Load (1.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)[0m
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:47:38 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.3ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)[0m
+  [1m[35mServiciorepuesto Load (0.5ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".ordendetalle_id = 1)
+SQLite3::SQLException: no such column: serviciorepuestos.ordendetalle_id: SELECT     "serviciorepuestos".* FROM       "serviciorepuestos"  WHERE     ("serviciorepuestos".ordendetalle_id = 1)
+Rendered main/orden_edit.html.erb within layouts/application (210.5ms)
+Completed   in 260ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: serviciorepuestos.ordendetalle_id: SELECT     "serviciorepuestos".* FROM       "serviciorepuestos"  WHERE     ("serviciorepuestos".ordendetalle_id = 1)):
+    20:                 <th>Cantidad</th>
+    21:                 <th>Costo</th>
+    22:               </tr>
+    23:               <% for repuesto in ordendetalle.serviciorepuestos %>
+    24:                 <tr>
+    25:                   <td><%= repuesto.nombre %></td>
+    26:                   <td><%= repuesto.cantidad %></td>
+  app/views/main/orden_edit.html.erb:23:in `_app_views_main_orden_edit_html_erb___1731672546_70145842040800_0'
+  app/views/main/orden_edit.html.erb:13:in `_app_views_main_orden_edit_html_erb___1731672546_70145842040800_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.4ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:49:36 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.3ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.3ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.4ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+Rendered main/orden_edit.html.erb within layouts/application (205.1ms)
+Completed 200 OK in 247ms (Views: 209.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:50:00 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.6ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)[0m
+  [1m[35mServiciorepuesto Load (0.4ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+Rendered main/orden_edit.html.erb within layouts/application (230.1ms)
+Completed 200 OK in 283ms (Views: 235.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:50:20 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.3ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+Rendered main/orden_edit.html.erb within layouts/application (82.9ms)
+Completed 200 OK in 251ms (Views: 88.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:50:38 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.4ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)[0m
+  [1m[35mServiciorepuesto Load (0.5ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+Rendered main/orden_edit.html.erb within layouts/application (89.9ms)
+Completed 200 OK in 145ms (Views: 97.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:50:56 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.3ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.3ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.4ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)
+  [1m[36mServiciorepuesto Load (0.5ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+Rendered main/orden_edit.html.erb within layouts/application (205.3ms)
+Completed 200 OK in 255ms (Views: 212.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:53:03 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.3ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.4ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)[0m
+  [1m[35mServiciorepuesto Load (0.4ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+Rendered main/orden_edit.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 128ms (Views: 88.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:56:43 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[36mOrden Load (0.4ms)[0m  [1mSELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1[0m
+  [1m[35mCita Load (0.4ms)[0m  SELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1
+  [1m[36mVehiculo Load (0.4ms)[0m  [1mSELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1[0m
+  [1m[35mOrdendetalle Load (0.5ms)[0m  SELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)
+  [1m[36mServiciorepuesto Load (0.6ms)[0m  [1mSELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)[0m
+Rendered main/orden_edit.html.erb within layouts/application (219.2ms)
+Completed 200 OK in 271ms (Views: 224.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/modificarorden/1" for 127.0.0.1 at Tue Nov 16 13:57:09 -0600 2010
+  Processing by MainController#orden_edit as HTML
+  Parameters: {"orden_id"=>"1"}
+  [1m[35mOrden Load (0.4ms)[0m  SELECT "ordenes".* FROM "ordenes" WHERE ("ordenes"."id" = 1) LIMIT 1
+  [1m[36mCita Load (0.4ms)[0m  [1mSELECT "citas".* FROM "citas" WHERE ("citas"."id" = 1) LIMIT 1[0m
+  [1m[35mVehiculo Load (0.3ms)[0m  SELECT "vehiculos".* FROM "vehiculos" WHERE ("vehiculos"."id" = 1) LIMIT 1
+  [1m[36mOrdendetalle Load (0.7ms)[0m  [1mSELECT "ordendetalles".* FROM "ordendetalles" WHERE ("ordendetalles".orden_id = 1)[0m
+  [1m[35mServiciorepuesto Load (0.5ms)[0m  SELECT "serviciorepuestos".* FROM "serviciorepuestos" WHERE ("serviciorepuestos".orden_detalle_id = 1)
+Rendered main/orden_edit.html.erb within layouts/application (216.9ms)
+Completed 200 OK in 268ms (Views: 223.5ms | ActiveRecord: 2.3ms)

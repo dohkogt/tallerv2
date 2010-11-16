@@ -1,0 +1,43 @@
+<h1>Actualizar Orden Taller</h1>
+
+<p>Ingrese el numero de placa del atomovil de la orden a consultar.</p>
+
+<% form_tag actualizarorden_path do %>
+<%= label_tag 'Placa Automovil:' %>
+<%= text_field_tag 'placa', '', :size => 20 %>
+<%= submit_tag 'Buscar Orden' %>
+<% end %>
+
+<% if @vehiculo.nil? %>
+  El vehiculo no existe.
+<% else %>
+  <% unless @ordenes.nil? %>
+    <h2>Ordenes para <%= @vehiculo.placa %></h2>
+    
+    <% if !@ordenes.blank? %>
+      <table width="0" cellspacing="1" cellpadding="10" border="1">
+        <tr>
+          <th>Fecha Hora Ingreso</th>
+          <th>Fecha Cita</th>
+          <th>Hora Cita</th>
+          <th>Estado</th>
+          <th>Accion</th>
+        </tr>
+        <% for orden in @ordenes  %>
+          <tr>
+            <td><%= orden.created_at %></td>
+            <td><%= orden.cita.fecha %></td>
+            <td><%= orden.cita.hora %></td>
+            <td><%= orden.estado_id %></td>
+            <td><%= link_to 'Elegir', modificarorden_path(orden.id), :title => 'Selecione orden para trabajar' %></td>
+          </tr>
+        <% end %>
+        
+      </table>
+
+    <% else %>
+      No hay ordenes para este vehiculo.
+    <% end %>
+
+  <% end %>
+<% end %>

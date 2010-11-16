@@ -4,6 +4,26 @@ require 'open-uri'
 
 class MainController < ApplicationController
 
+  def actualizar_orden
+    if params[:placa]
+      @vehiculo = Vehiculo.find_by_placa(params[:placa].upcase)      
+      @ordenes = @vehiculo.ordenes unless @vehiculo.nil?
+    end
+  end
+
+  def orden_edit
+    @orden = Orden.find( params[:orden_id] )
+    @ordendetalles = @orden.ordendetalles
+  end
+
+
+  def orden_add
+    @orden = Orden.find( params[:orden_id] )
+    @ordendetalle = Ordendetalle.find(params[:orden_detalle_id])
+  
+  end
+  
+  
   def descargo1
     i_orden = [:orden_id]
     i_serv  = [:servi_id]

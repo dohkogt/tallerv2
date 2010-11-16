@@ -15,6 +15,12 @@ Taller::Application.routes.draw do
   match 'devolucionvehiculo/:orden_id(.format)' => 'main#devolucion_vehiculo'
   match 'descargo1/:orden_id/servi_id(.format)' => 'main#descargo1'
   match 'solicitudordenrepuestos/:orden_id/:servi_id(.format)' => 'main#solicitudordenrepuestos'
+
+
+  match 'actualizarorden' => 'main#actualizar_orden'
+  match 'modificarorden/:orden_id' => 'main#orden_edit', :as => 'modificarorden'
+  match 'agregarrepuesto/:orden_id/:orden_detalle_id' => 'main#orden_add', :as => 'agregarrepuesto'
+
   resources :serviciorepuestos
 
   resources :ordendetalles

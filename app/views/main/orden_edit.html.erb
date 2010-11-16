@@ -1,0 +1,41 @@
+<h1>Mofificando Orden #<%= @orden.id %></h1>
+<h2>Vehiculo:</h2>
+<%= @orden.cita.vehiculo.placa %>
+<h2>Servicios Prestados</h2>
+<% if !@ordendetalles.blank? %>
+
+    <table width="100%" cellspacing="0" cellpadding="0" border="1">
+      <tr>
+        <th>Servicio</th>
+        <th>Repuestos</th>
+        <th>Accion</th>
+      </tr>
+      <% for ordendetalle in @ordendetalles %>
+        <tr>
+          <td width="50%"><%= ordendetalle.descripcion %></td> 
+          <td>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+              </tr>
+              <% for repuesto in ordendetalle.serviciorepuestos %>
+                <tr>
+                  <td><%= repuesto.nombre %></td>
+                  <td><%= repuesto.cantidad %></td>
+                  <td><%= repuesto.costo %></td>
+                </tr>
+              <% end %>
+            </table>
+          </td>
+          <td width="15%"><%= link_to "Agregar Repuestos", agregarrepuesto_path(@orden.id, ordendetalle.id) %></td>
+        </tr>
+      <% end %>
+    </table>
+
+<% else %>
+  No hay Servicios o repuestos asignados.
+<% end %>
+<br />
+
