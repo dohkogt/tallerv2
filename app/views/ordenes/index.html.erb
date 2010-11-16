@@ -12,7 +12,7 @@
 <% @ordenes.each do |orden| %>
   <tr>
     <td><%= orden.cita_id %></td>
-    <td><%= orden.estado_id %></td>
+    <td><%= orden.estado.nombre %></td>
     <td><%= link_to 'Show', orden %></td>
     <td><%= link_to 'Edit', edit_orden_path(orden) %></td>
     <td><%= link_to 'Destroy', orden, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datos>
+  <producto>
+    <codigo>13</codigo>
+    <descripcion>Llanta Radial Ring 12</descripcion>
+  </producto>
+  <producto>
+    <codigo>11</codigo>
+    <descripcion>Llanta Radial Ring 15</descripcion>
+  </producto>
+  <producto>
+    <codigo>14</codigo>
+    <descripcion>Llanta Radial Ring 16</descripcion>
+  </producto>
+  <producto>
+    <codigo>10</codigo>
+    <descripcion>Llanta Radial Ring 17</descripcion>
+  </producto>
+  <producto>
+    <codigo>12</codigo>
+    <descripcion>Llanta Radial Ring 22</descripcion>
+  </producto>	
+</datos>

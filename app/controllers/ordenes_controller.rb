@@ -3,7 +3,7 @@ class OrdenesController < ApplicationController
   # GET /ordenes.xml
   def index
     @ordenes = Orden.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ordenes }
@@ -36,6 +36,10 @@ class OrdenesController < ApplicationController
   def edit
     @orden = Orden.find(params[:id])
   end
+  def ver
+   render :controller=>"main", :action=>"consultar_estado"
+  end
+
 
   # POST /ordenes
   # POST /ordenes.xml

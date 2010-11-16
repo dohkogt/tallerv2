@@ -4,9 +4,10 @@ unless @error_code.nil?
     xml.confirmacion 0
   end
 else
-  xml.consultar_repuestos do
-    @nombre.each do
-    xml.repuesto_id @nombre
+  xml.consultar_repuesto do
+    @repuestos.each do |repuesto|
+     xml.repuesto_id repuesto[:codigo]
+     xml.repuesto_nombre repuesto[:descrip]
     end
     end
 end
