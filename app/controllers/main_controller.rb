@@ -61,19 +61,23 @@ class MainController < ApplicationController
 
 # Get http://consultarrepuestos/:descripcion
   def consultar_repuestos
+    @repuestos = []
+    
     i_repuesto = params[:descripcion]
 
     url_repuesto = "http://localhost:3000/consultar_repuestos.xml"
     puts url_repuesto
     repuestos_doc = Nokogiri::XML(open(url_repuesto))
 
-
     repuestos_nodos = repuestos_doc.css("producto")
-    
+
+      
     repuestos_nodos.each do |repuesto|
-      puts repuesto.css('codigo').text
-      puts repuesto.css('descripcion').text
+      @repuestos << [repuesto.css('codigo').text,
+                     repuesto.css('descripcion').text ]
     end
+
+    puts @repuestos.inspect
 
     respond_to do |format|
        format.xml
