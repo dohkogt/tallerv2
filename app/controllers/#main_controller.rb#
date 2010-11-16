@@ -38,6 +38,7 @@ class MainController < ApplicationController
     # @odetalles = Ordendetalle.select('servicio_id').where("orden_id = ?", i_orden)
     
     @odetalles = Ordendetalle.find_all_by_orden_id(id_orden)
+    ids = []
     @odetalles.each do |ordetalle|
       iddetalle = ordetalle.id
       @repdesc = Serviciorepuesto.find_all_by_orden_detalle_id(iddetalle)
