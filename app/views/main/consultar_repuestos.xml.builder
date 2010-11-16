@@ -5,9 +5,8 @@ unless @error_code.nil?
   end
 else
   xml.consultar_repuestos do
-   @repuesto.each do  
-    xml.repuesto_id @repuesto.id
+    @nombre.each do
+    xml.repuesto_id @nombre
     end
-
-  end
+    end
 end
